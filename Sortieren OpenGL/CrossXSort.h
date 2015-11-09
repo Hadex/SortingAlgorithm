@@ -13,10 +13,11 @@ private:
 
 public:
 
-	void crossxsort(std::vector<int>*, int);
-	void partition(std::vector<int>*, int, int);
-	void graphicCrossxsort(std::vector<int>*, int);
-	void graphicPartition(std::vector<int>*, int, int);
+	void start(std::vector<int>*, int, int);
+	void crossxsort(std::vector<int>*, int, int);
+	int partition(std::vector<int>*, int, int);
+	void graphicCrossxsort(std::vector<int>*, int, int);
+	int graphicPartition(std::vector<int>*, int, int);
 
 	CrossXSort(DrawGraphics*);
 	~CrossXSort();

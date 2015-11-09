@@ -105,7 +105,7 @@ int main()
 				mountainsort->graphicMountainsort(list2, 0, ARRAY_SIZE - 1);
 				break;
 			case 8:
-				crossxsort->crossxsort(list2, ARRAY_SIZE - 1);
+				crossxsort->graphicCrossxsort(list2, 0, ARRAY_SIZE - 1);
 				break;
 			default:
 				break;
@@ -224,9 +224,9 @@ void startSort(int mode){
 	case 7:
 		mountainsort->mountainsort(list1, 0, ARRAY_SIZE - 1);
 		break;
-	/*case 8:
-		crossxsort->crossxsort(list1, 0, ARRAY_SIZE - 1);
-		break;*/
+	case 8:
+		crossxsort->start(list1, 0, ARRAY_SIZE - 1);
+		break;
 	default:
 		break;
 	}
