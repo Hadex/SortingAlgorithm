@@ -42,7 +42,7 @@ void Bogosort::graphicBogosort(vector<int>* list, vector<int>* ordered){
 		{
 			done = true;
 		}
+		this_thread::sleep_for(chrono::milliseconds(200));
 	}
-	this_thread::sleep_for(chrono::milliseconds(300));
 
 }

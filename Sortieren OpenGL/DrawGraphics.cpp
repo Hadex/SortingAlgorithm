@@ -70,9 +70,6 @@ void DrawGraphics::redraw(int index){
 			}
 		}
 		break;
-	case GL_QUADS:
-
-		break;
 	default:
 		for (int i = 0; i < ARRAY_SIZE; i++)
 		{

@@ -15,8 +15,8 @@ public:
 
 	void crossxsort(std::vector<int>*, int);
 	void partition(std::vector<int>*, int, int);
-	void graphicMountainsort(std::vector<int>*, int, int);
-	void graphicPartition(std::vector<int>*, int, int, int);
+	void graphicCrossxsort(std::vector<int>*, int);
+	void graphicPartition(std::vector<int>*, int, int);
 
 	CrossXSort(DrawGraphics*);
 	~CrossXSort();
