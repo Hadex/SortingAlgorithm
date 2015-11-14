@@ -50,8 +50,6 @@ int CrossXSort::partition(vector<int>* list, int start, int end){
 			min = i;
 		}
 	}
-	swap(list->at(max), list->at(end));
-	swap(list->at(min), list->at(0));
 	mid = (list->at(max) + list->at(min)) / 2;
 	for (int i = 1; i < end / 2; i++)
 	{

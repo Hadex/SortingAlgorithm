@@ -75,27 +75,47 @@
   <ItemGroup>
     <ClCompile Include="Bogosort.cpp" />
     <ClCompile Include="Bubblesort.cpp" />
+    <ClCompile Include="Cocktailsort.cpp" />
+    <ClCompile Include="Combsort.cpp" />
     <ClCompile Include="CrossXSort.cpp" />
     <ClCompile Include="DrawGraphics.cpp" />
+    <ClCompile Include="Gnomesort.cpp" />
+    <ClCompile Include="Countingsort.cpp" />
+    <ClCompile Include="Heapsort.cpp" />
     <ClCompile Include="Include.cpp" />
     <ClCompile Include="Insertionsort.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Mergesort.cpp" />
+    <ClCompile Include="Pigeonholesort.cpp" />
     <ClCompile Include="Quicksort.cpp" />
     <ClCompile Include="Selectionsort.cpp" />
     <ClCompile Include="Mountainsort.cpp" />
+    <ClCompile Include="MinMaxSort.cpp" />
+    <ClCompile Include="Shellsort.cpp" />
+    <ClCompile Include="Stoogesort.cpp" />
+    <ClCompile Include="Swapsort.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bogosort.h" />
     <ClInclude Include="Bubblesort.h" />
+    <ClInclude Include="Cocktailsort.h" />
+    <ClInclude Include="Combsort.h" />
     <ClInclude Include="CrossXSort.h" />
     <ClInclude Include="DrawGraphics.h" />
+    <ClInclude Include="Gnomesort.h" />
+    <ClInclude Include="Countingsort.h" />
+    <ClInclude Include="Heapsort.h" />
     <ClInclude Include="Include.h" />
     <ClInclude Include="Insertionsort.h" />
     <ClInclude Include="Mergesort.h" />
+    <ClInclude Include="Pigeonholesort.h" />
     <ClInclude Include="Quicksort.h" />
     <ClInclude Include="Selectionsort.h" />
     <ClInclude Include="Mountainsort.h" />
+    <ClInclude Include="MinMaxSort.h" />
+    <ClInclude Include="Shellsort.h" />
+    <ClInclude Include="Stoogesort.h" />
+    <ClInclude Include="Swapsort.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

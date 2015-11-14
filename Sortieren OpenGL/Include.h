@@ -13,6 +13,7 @@
 #include <vector>
 #include <algorithm>
 #include <iterator>
+#include <iomanip>
 
 #include "DrawGraphics.h"
 #include "Bubblesort.h"
@@ -23,5 +24,15 @@
 #include "Bogosort.h"
 #include "Mountainsort.h"
 #include "CrossXSort.h"
+#include "MinMaxSort.h"
+#include "Heapsort.h"
+#include "Combsort.h"
+#include "Swapsort.h"
+#include "Shellsort.h"
+#include "Cocktailsort.h"
+#include "Stoogesort.h"
+#include "Pigeonholesort.h"
+#include "Gnomesort.h"
+#include "Countingsort.h"
 
 #endif
