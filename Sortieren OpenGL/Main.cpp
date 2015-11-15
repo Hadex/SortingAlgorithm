@@ -26,6 +26,8 @@ Gnomesort* gnomesort;
 Stoogesort* stoogesort;
 Countingsort* countingsort;
 
+DrawGraphics* graphics;
+
 GLFWwindow* window;
 vector<int>* list1;
 vector<int>* list2;
@@ -33,9 +35,10 @@ vector<int>* list3;
 
 bool done = false;
 bool deleted = false;
+bool requested = false;
 int SORT_MODE = 1;
 int DRAW_MODE = 1;
-int ARRAY_SIZE = 1;
+int ARRAY_SIZE = 0;
 int MAX_VALUE = 0;
 float DRAW_DELAY = 0;
 float POINT_COL_RED = 0;
@@ -48,8 +51,9 @@ int POINT_COLOR = 0xFF0000;
 int BACK_COLOR = 0x000000;
 float WIDTH_SCALE = 1.0f;
 
-int main()
-{
+int main(){
+
+	srand(time(NULL));
 
 	if (!glfwInit())
 	{
@@ -64,42 +68,7 @@ int main()
 	}
 
 	start();
-	setupGL();
 	
-	list1 = new vector<int>(ARRAY_SIZE);
-	list2 = new vector<int>(ARRAY_SIZE);
-	list3 = new vector<int>(ARRAY_SIZE);
-
-	for (int i = 0; i < ARRAY_SIZE; i++)
-	{
-		list1->at(i) = rand() % MAX_VALUE + 1;
-	}
-
-	random_shuffle(list1->begin(), list1->end());
-	copy(list1->begin(), list1->end(), list2->begin());
-	copy(list1->begin(), list1->end(), list3->begin());
-
-	DrawGraphics* graphics = new DrawGraphics(window, list2, POINT_COL_RED, POINT_COL_GREEN, POINT_COL_BLUE, BACK_COL_RED, BACK_COL_GREEN, BACK_COL_BLUE, ARRAY_SIZE, DRAW_MODE, DRAW_DELAY);
-
-	quicksort = new Quicksort(graphics);
-	bubblesort = new Bubblesort(graphics);
-	insertionsort = new Insertionsort(graphics);
-	selectionsort = new Selectionsort(graphics);
-	mergesort = new Mergesort(graphics);
-	bogosort = new Bogosort(graphics);
-	mountainsort = new Mountainsort(graphics);
-	crossxsort = new CrossXSort(graphics);
-	minmaxsort = new Minmaxsort(graphics);
-	heapsort = new Heapsort(graphics);
-	combsort = new Combsort(graphics);
-	swapsort = new Swapsort(graphics);
-	shellsort = new Shellsort(graphics);
-	cocktailsort = new Cocktailsort(graphics);
-	pigeonholesort = new Pigeonholesort(graphics);
-	gnomesort = new Gnomesort(graphics);
-	stoogesort = new Stoogesort(graphics);
-	countingsort = new Countingsort(graphics);
-
 	glfwSwapInterval(60);
 
 	while (!glfwWindowShouldClose(window))
@@ -169,10 +138,22 @@ int main()
 			}
 			t.join();
 			done = true;
-
 		}
-		if (done && !deleted){
-
+		/*if (!requested)
+		{
+			char s;
+			cout << "\n\nNochmal? (y | n)";
+			cin >> s;
+			if (s == 'y')
+			{
+				start();
+				cout << "\n";
+				done = false;
+			}
+			requested = true;
+		}*/
+		if (done && requested && !deleted)
+		{
 			delete list1;
 			delete list2;
 			delete list3;
@@ -199,7 +180,6 @@ int main()
 
 		}
 		glfwPollEvents();
-
 	}
 	glfwTerminate();
 	return 0;
@@ -207,9 +187,7 @@ int main()
 }
 
 void start(){
-
-	srand(time(NULL));
-
+	
 	cout << "W\x84hle ein Sortierverfahren:\n" << 
 		"1: Quicksort" << setw(30) << "10: Heapsort\n" << "2: Bubblesort" << setw(29) << "11: Combsort\n" << 
 		"3: Insertionsort" << setw(26) << "12: Swapsort\n"<< "4: Selectionsort" << setw(27) << "13: Shellsort\n"<<
@@ -257,6 +235,41 @@ void start(){
 		<< "Elementfarbe: R - " << POINT_COL_RED << " G - " << POINT_COL_GREEN << " B - " << POINT_COL_BLUE << "\n"
 		<< "Hintergrundfarbe: R - " << BACK_COL_RED << " G - " << BACK_COL_GREEN << " B - " << BACK_COL_BLUE << "\n"
 		<< "Zeichenverz\x94gerung: " << DRAW_DELAY << "\xE6s bei 60 fps\n\n\n";
+
+	list1 = new vector<int>(ARRAY_SIZE);
+	list2 = new vector<int>(ARRAY_SIZE);
+	list3 = new vector<int>(ARRAY_SIZE);
+
+	for (int i = 0; i < ARRAY_SIZE; i++)
+	{
+		list1->at(i) = rand() % MAX_VALUE + 1;
+	}
+	random_shuffle(list1->begin(), list1->end());
+	copy(list1->begin(), list1->end(), list2->begin());
+	copy(list1->begin(), list1->end(), list3->begin());
+
+	graphics = new DrawGraphics(window, list2, POINT_COL_RED, POINT_COL_GREEN, POINT_COL_BLUE, BACK_COL_RED, BACK_COL_GREEN, BACK_COL_BLUE, ARRAY_SIZE, DRAW_MODE, DRAW_DELAY);
+
+	quicksort = new Quicksort(graphics);
+	bubblesort = new Bubblesort(graphics);
+	insertionsort = new Insertionsort(graphics);
+	selectionsort = new Selectionsort(graphics);
+	mergesort = new Mergesort(graphics);
+	bogosort = new Bogosort(graphics);
+	mountainsort = new Mountainsort(graphics);
+	crossxsort = new CrossXSort(graphics);
+	minmaxsort = new Minmaxsort(graphics);
+	heapsort = new Heapsort(graphics);
+	combsort = new Combsort(graphics);
+	swapsort = new Swapsort(graphics);
+	shellsort = new Shellsort(graphics);
+	cocktailsort = new Cocktailsort(graphics);
+	pigeonholesort = new Pigeonholesort(graphics);
+	gnomesort = new Gnomesort(graphics);
+	stoogesort = new Stoogesort(graphics);
+	countingsort = new Countingsort(graphics);
+
+	setupGL();
 
 }
 

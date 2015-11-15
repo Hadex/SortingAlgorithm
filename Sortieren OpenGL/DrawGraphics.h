@@ -9,8 +9,8 @@ class DrawGraphics
 
 	private:
 
-		GLFWwindow* window;
 		std::vector<int>* list;
+		GLFWwindow* window;
 		int CHOSEN_MODE;
 		int ARRAY_SIZE;
 		float POINT_COL_RED;

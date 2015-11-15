@@ -37,60 +37,42 @@ void DrawGraphics::redraw(int index){
 	case GL_POINTS:
 		for (int i = 0; i < ARRAY_SIZE; i++)
 		{
+			glColor3f(POINT_COL_RED, POINT_COL_GREEN, POINT_COL_BLUE);
 			if (i == index)
 			{
 				glColor3f(1, 1, 1);
-				glBegin(CHOSEN_MODE);
-					glVertex2i(i, list->at(i));
-				glEnd();
 			}
-			else
-			{
-				glColor3f(POINT_COL_RED, POINT_COL_GREEN, POINT_COL_BLUE);
-				glBegin(CHOSEN_MODE);
-					glVertex2i(i, list->at(i));
-				glEnd();
-			}
+			glBegin(CHOSEN_MODE);
+				glVertex2i(i, list->at(i));
+			glEnd();
 		}
 		break;
 	case GL_LINES:
 		for (int i = 0; i < ARRAY_SIZE; i++)
 		{
+			glColor3f(POINT_COL_RED, POINT_COL_GREEN, POINT_COL_BLUE);
 			if (i == index)
 			{
 				glColor3f(1, 1, 1);
-				glBegin(CHOSEN_MODE);
-					glVertex2i(i, 0);
-					glVertex2i(i, list->at(i));
-				glEnd();
+				Beep(list->at(i) * 1.5f, 1);
 			}
-			else
-			{
-				glColor3f(POINT_COL_RED, POINT_COL_GREEN, POINT_COL_BLUE);
-				glBegin(CHOSEN_MODE);
-					glVertex2i(i, 0);
-					glVertex2i(i, list->at(i));
-				glEnd();
-			}
+			glBegin(CHOSEN_MODE);
+				glVertex2i(i, 0);
+				glVertex2i(i, list->at(i));
+			glEnd();
 		}
 		break;
 	default:
 		for (int i = 0; i < ARRAY_SIZE; i++)
 		{
+			glColor3f(POINT_COL_RED, POINT_COL_GREEN, POINT_COL_BLUE);
 			if (i == index)
 			{
 				glColor3f(1, 1, 1);
-				glBegin(CHOSEN_MODE);
-					glVertex2i(i, list->at(i));
-				glEnd();
 			}
-			else
-			{
-				glColor3f(POINT_COL_RED, POINT_COL_GREEN, POINT_COL_BLUE);
-				glBegin(CHOSEN_MODE);
-					glVertex2i(i, list->at(i));
-				glEnd();
-			}
+			glBegin(CHOSEN_MODE);
+				glVertex2i(i, list->at(i));
+			glEnd();
 		}
 		break;
 	}
